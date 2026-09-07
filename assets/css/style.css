@@ -298,7 +298,8 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 }
 .trust__list{
   display:flex; flex-wrap:wrap; align-items:flex-end;
-  gap:clamp(22px,3.4vw,52px);
+  justify-content:space-between;
+  gap:clamp(22px,3vw,44px);
 }
 .trust__item{ display:grid; gap:clamp(9px,1vw,13px); justify-items:center; }
 /* Each mark shows its own file, with the name underneath. Until a file is
@@ -524,18 +525,19 @@ a.field__v:hover{ color:var(--brick); border-color:var(--brick); }
 
 /* the world map sits beside the mark; until the file lands the cities
    carry the same information on their own */
-.foot__maplabel{
+.foot__map.is-text .foot__maplabel{
   font-family:var(--f-mono); font-size:10px; font-weight:500;
   letter-spacing:.16em; text-transform:uppercase;
   color:rgba(250,246,236,.42); margin-bottom:14px;
 }
-.foot__mapimg{ width:100%; height:auto; border-radius:8px; opacity:.9; }
+.foot__mapimg{ width:100%; height:auto; border-radius:10px; opacity:.92; }
 .foot__map.is-text .foot__mapimg{ display:none; }
-.foot__cities{
+.foot__map.is-text .foot__cities{
   display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:16px;
   font-family:var(--f-display); font-size:clamp(17px,1.7vw,23px); line-height:1.2;
   color:rgba(250,246,236,.82);
 }
+.foot__map:not(.is-text) .foot__cities{ display:none; }
 .foot__cities li{ position:relative; }
 .foot__cities li::before{
   content:""; position:absolute; left:-15px; top:.55em;

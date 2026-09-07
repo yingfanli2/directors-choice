@@ -27,10 +27,9 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
   team/     — IN PLACE. Two photographs that crossfade in the About block.
   facility/ — IN PLACE. Two photographs that crossfade in Capabilities.
 
-  map.png   — MISSING. The world map of Director's Choice locations, for the
-              footer. Until it exists the footer lists the four cities as type
-              instead, so nothing looks broken. Drop the file in and it appears.
-              Wide (roughly 2:1), dark ground to match the footer.
+  map.jpg   — IN PLACE. The world map of Director's Choice locations, in the
+              footer. It names the four cities itself, so the type list beside
+              it only appears if the file goes missing.
 
   og.jpg                  1200 x  630    1.91:1 social share preview
 
