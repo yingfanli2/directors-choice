@@ -220,6 +220,42 @@
     play();
   })();
 
+  /* ---- two-photo crossfades ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('.fade'), function (root) {
+    var items = Array.prototype.slice.call(root.querySelectorAll('.fade__item'));
+    var dots = Array.prototype.slice.call(root.querySelectorAll('.fade__dot'));
+    if (items.length < 2) return;
+
+    var at = 0;
+    var timer = null;
+
+    function show(n) {
+      at = (n + items.length) % items.length;
+      items.forEach(function (el, i) { el.classList.toggle('is-on', i === at); });
+      dots.forEach(function (d, i) {
+        d.classList.toggle('is-on', i === at);
+        d.setAttribute('aria-current', i === at ? 'true' : 'false');
+      });
+    }
+    function play() {
+      if (reduce) return;
+      stop();
+      timer = setInterval(function () { show(at + 1); }, 5200);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { show(i); play(); });
+    });
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', play);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', play);
+
+    show(0);
+    play();
+  });
+
   /* ---- current year ---- */
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = String(new Date().getFullYear());

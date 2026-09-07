@@ -251,14 +251,22 @@
 
     <div class="about">
       <div class="about__lead reveal">
-        <p class="display-sm">
-          Four core product lines —
-          <em>developed, produced and delivered under one roof.</em>
-        </p>
-        <figure class="media media--tall" data-slot="assets/img/about.jpg · 1200 × 1500 · 4:5">
-          <img src="assets/img/about.jpg" alt="Development and production at Director's Choice" loading="lazy"
-               onerror="this.closest('.media').classList.add('is-empty')">
-        </figure>
+        <div class="fade" id="aboutFade">
+          <figure class="media fade__item is-on">
+            <img src="assets/img/team/01-storefront.jpg" width="900" height="675"
+                 alt="Director's Choice team at a World of Disney store" loading="lazy" decoding="async">
+          </figure>
+          <figure class="media fade__item">
+            <img src="assets/img/team/02-trade-show.jpg" width="900" height="833"
+                 alt="The Director's Choice team at their trade show booth" loading="lazy" decoding="async">
+          </figure>
+          <div class="fade__dots">
+          <button class="fade__dot is-on" type="button"
+                  data-i="0" aria-label="Photo 1 of 2"></button>
+          <button class="fade__dot" type="button"
+                  data-i="1" aria-label="Photo 2 of 2"></button>
+          </div>
+        </div>
       </div>
 
       <div class="about__grid">
@@ -348,8 +356,9 @@
 
     <div class="prods">
       <article class="prod reveal">
-        <figure class="media media--sq" data-slot="assets/img/product-plush.jpg · 1200 × 1500 · 4:5">
-          <img src="assets/img/product-plush.jpg" alt="Plush toys" loading="lazy"
+        <figure class="media media--sq" data-slot="assets/img/gallery/02-character-plush.jpg">
+          <img src="assets/img/gallery/02-character-plush.jpg" width="900" height="675" alt="Plush toys"
+               loading="lazy" decoding="async"
                onerror="this.closest('.media').classList.add('is-empty')">
         </figure>
         <span class="prod__n">01</span>
@@ -358,8 +367,9 @@
       </article>
 
       <article class="prod reveal">
-        <figure class="media media--sq" data-slot="assets/img/product-silicone.jpg · 1200 × 1500 · 4:5">
-          <img src="assets/img/product-silicone.jpg" alt="Silicone products" loading="lazy"
+        <figure class="media media--sq" data-slot="assets/img/gallery/08-miniature-figures.jpg">
+          <img src="assets/img/gallery/08-miniature-figures.jpg" width="900" height="675" alt="Silicone products"
+               loading="lazy" decoding="async"
                onerror="this.closest('.media').classList.add('is-empty')">
         </figure>
         <span class="prod__n">02</span>
@@ -368,8 +378,9 @@
       </article>
 
       <article class="prod reveal">
-        <figure class="media media--sq" data-slot="assets/img/product-drinkware.jpg · 1200 × 1500 · 4:5">
-          <img src="assets/img/product-drinkware.jpg" alt="Stainless steel drinkware" loading="lazy"
+        <figure class="media media--sq" data-slot="assets/img/gallery/03-bottles-tumblers.jpg">
+          <img src="assets/img/gallery/03-bottles-tumblers.jpg" width="900" height="675" alt="Stainless steel drinkware"
+               loading="lazy" decoding="async"
                onerror="this.closest('.media').classList.add('is-empty')">
         </figure>
         <span class="prod__n">03</span>
@@ -378,8 +389,9 @@
       </article>
 
       <article class="prod reveal">
-        <figure class="media media--sq" data-slot="assets/img/product-injection.jpg · 1200 × 1500 · 4:5">
-          <img src="assets/img/product-injection.jpg" alt="Plastic injection" loading="lazy"
+        <figure class="media media--sq" data-slot="assets/img/gallery/09-villain-series.jpg">
+          <img src="assets/img/gallery/09-villain-series.jpg" width="900" height="675" alt="Plastic injection"
+               loading="lazy" decoding="async"
                onerror="this.closest('.media').classList.add('is-empty')">
         </figure>
         <span class="prod__n">04</span>
@@ -401,11 +413,22 @@
           <span class="sec-num">04</span>
           <h2 class="sec-title">Our capabilities</h2>
         </div>
-        <p class="sec-intro reveal">One team, one schedule, one point of contact — from the first concept sketch to the park distribution center.</p>
-        <figure class="media media--wide reveal" data-slot="assets/img/facility.jpg · 1400 × 1050 · 4:3">
-          <img src="assets/img/facility.jpg" alt="Production and quality control" loading="lazy"
-               onerror="this.closest('.media').classList.add('is-empty')">
-        </figure>
+        <div class="fade fade--wide reveal">
+          <figure class="media fade__item is-on">
+            <img src="assets/img/facility/01-tooling.jpg" width="900" height="601"
+                 alt="A precision injection mould tool" loading="lazy" decoding="async">
+          </figure>
+          <figure class="media fade__item">
+            <img src="assets/img/facility/02-moulding-floor.jpg" width="900" height="584"
+                 alt="The injection moulding floor" loading="lazy" decoding="async">
+          </figure>
+          <div class="fade__dots">
+          <button class="fade__dot is-on" type="button"
+                  data-i="0" aria-label="Photo 1 of 2"></button>
+          <button class="fade__dot" type="button"
+                  data-i="1" aria-label="Photo 2 of 2"></button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -437,20 +460,7 @@
     <div class="cta__grid">
       <div class="field reveal">
         <span class="field__l">Email</span>
-        <!-- SLOT: replace with the real address -->
         <span class="field__v is-slot">[ EMAIL ADDRESS ]</span>
-      </div>
-      <div class="field reveal">
-        <span class="field__l">Telephone</span>
-        <span class="field__v is-slot">[ PHONE NUMBER ]</span>
-      </div>
-      <div class="field reveal">
-        <span class="field__l">Office</span>
-        <span class="field__v is-slot">[ COMPANY ADDRESS ]</span>
-      </div>
-      <div class="field reveal">
-        <span class="field__l">Response time</span>
-        <span class="field__v">Within 12 hours, any time zone</span>
       </div>
     </div>
 
@@ -463,20 +473,36 @@
 <!-- ───────────────────────────  FOOTER  ─────────────────────────── -->
 <footer class="foot">
   <div class="wrap foot__inner">
-    <div>
-      <img class="foot__logo" src="assets/img/logo.png" width="161" height="44"
-           alt="Director's Choice Ltd">
-      <p class="foot__tag">One stop solution provider — from concept to merchandise store shelf.</p>
+    <div class="foot__top">
+      <div>
+        <img class="foot__logo" src="assets/img/logo.png" width="161" height="44"
+             alt="Director's Choice Ltd">
+        <p class="foot__tag">One stop solution provider — from concept to merchandise store shelf.</p>
+      </div>
+
+      <div class="foot__map">
+        <p class="foot__maplabel">Director's Choice locations</p>
+        <img class="foot__mapimg" src="assets/img/map.png" alt="Dallas, Hong Kong, Shenzhen and Shanghai"
+             onerror="this.closest('.foot__map').classList.add('is-text')">
+        <ul class="foot__cities">
+          <li>Dallas</li>
+          <li>Hong Kong</li>
+          <li>Shenzhen</li>
+          <li>Shanghai</li>
+        </ul>
+      </div>
     </div>
-    <nav class="foot__nav" aria-label="Footer">
-      <a href="#about">About</a>
-      <a href="#advantage">Advantage</a>
-      <a href="#products">Products</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <p class="foot__legal">© <span id="yr">2026</span> Director's Choice Ltd. All rights reserved.<br>
-      <span class="is-slot">[ COMPANY REGISTRATION / ADDRESS LINE ]</span></p>
+
+    <div class="foot__bottom">
+      <nav class="foot__nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#advantage">Advantage</a>
+        <a href="#products">Products</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="foot__legal">© <span id="yr">2026</span> Director's Choice Ltd. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 

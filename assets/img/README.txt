@@ -24,12 +24,14 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
              so they had to be turned a quarter turn clockwise afterwards. If
              you ever add another iPhone photo this way, check it stands up.
 
-  about.jpg               1200 x 1500    4:5    development / production shot
-  product-plush.jpg       1200 x 1500    4:5
-  product-silicone.jpg    1200 x 1500    4:5
-  product-drinkware.jpg   1200 x 1500    4:5
-  product-injection.jpg   1200 x 1500    4:5
-  facility.jpg            1400 x 1050    4:3    factory / QC / inspection
+  team/     — IN PLACE. Two photographs that crossfade in the About block.
+  facility/ — IN PLACE. Two photographs that crossfade in Capabilities.
+
+  map.png   — MISSING. The world map of Director's Choice locations, for the
+              footer. Until it exists the footer lists the four cities as type
+              instead, so nothing looks broken. Drop the file in and it appears.
+              Wide (roughly 2:1), dark ground to match the footer.
+
   og.jpg                  1200 x  630    1.91:1 social share preview
 
 
