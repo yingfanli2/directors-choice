@@ -76,10 +76,8 @@
 
     var track = root.querySelector('.carousel__track');
     var stage = root.querySelector('.carousel__stage');
-    var count = document.getElementById('carouselNow');
     var real = Array.prototype.slice.call(track.children);
-    var realN = real.length;
-    if (realN < 2) return;
+    if (real.length < 2) return;
 
     // Five visible slots plus a hidden slot each side needs seven cards for
     // the wrap to happen off-stage. With fewer, clone the deck once so the
@@ -124,7 +122,6 @@
         el.style.pointerEvents = d === 3 ? 'none' : '';
         el.classList.toggle('is-active', off === 0);
       });
-      if (count) count.textContent = String((active % realN) + 1);
     }
 
     function go(step) {

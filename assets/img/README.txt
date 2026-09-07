@@ -23,6 +23,20 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
   og.jpg                  1200 x  630    1.91:1 social share preview
 
 
+  clients/  — EMPTY, and the page works without it. The trust strip shows each
+             client's wordmark as type until a logo file appears, then swaps to
+             the image automatically. Expected filenames:
+
+               clients/disney.png
+               clients/universal-studios.png
+               clients/seaworld.png
+               clients/kennedy-space-center.png
+
+             White or light knockout versions, transparent PNG, about 200px
+             tall. See NOTES.md before adding these - using a client's mark in
+             your own marketing usually needs their written permission.
+
+
 BRAND ASSETS - already in place, generated from "DC Logo.pdf". Do not overwrite
 without regenerating both colourways together.
 
