@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -30,7 +30,7 @@
 <header class="nav" id="nav">
   <div class="nav__inner">
     <a class="brand" href="#top">
-      <img class="brand__logo" src="assets/img/logo-light.png" width="124" height="34"
+      <img class="brand__logo" src="assets/img/logo.png" width="124" height="34"
            alt="Director's Choice — home">
     </a>
 
@@ -85,14 +85,74 @@
     </div>
 
     <div class="hero__media">
-      <figure class="media media--hero reveal" data-slot="assets/img/hero.jpg · 1500 × 2000 · 3:4">
-        <img src="assets/img/hero.jpg" alt="Theme park merchandise produced by Director's Choice" fetchpriority="high"
-             onerror="this.closest('.media').classList.add('is-empty')">
-      </figure>
-      <figure class="media media--hero-detail reveal" data-slot="assets/img/hero-detail.jpg · 1000 × 1000 · 1:1">
-        <img src="assets/img/hero-detail.jpg" alt="Stainless steel tumbler detail"
-             onerror="this.closest('.media').classList.add('is-empty')">
-      </figure>
+      <div class="carousel reveal" id="carousel" role="group"
+           aria-roledescription="carousel" aria-label="What we make">
+        <div class="carousel__stage">
+          <ul class="carousel__track">
+          <li class="carousel__item">
+            <figure class="media carousel__card" data-slot="assets/img/carousel-1.jpg · 1200 × 1500 · 4:5">
+              <img src="assets/img/carousel-1.jpg" alt="Plush — Character-accurate" loading="lazy"
+                   onerror="this.closest('.media').classList.add('is-empty')">
+              <figcaption class="carousel__meta">
+                <span class="carousel__cat">Plush</span>
+                <span class="carousel__name">Character-accurate</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="carousel__item">
+            <figure class="media carousel__card" data-slot="assets/img/carousel-2.jpg · 1200 × 1500 · 4:5">
+              <img src="assets/img/carousel-2.jpg" alt="Silicone — Everyday carry" loading="lazy"
+                   onerror="this.closest('.media').classList.add('is-empty')">
+              <figcaption class="carousel__meta">
+                <span class="carousel__cat">Silicone</span>
+                <span class="carousel__name">Everyday carry</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="carousel__item">
+            <figure class="media carousel__card" data-slot="assets/img/carousel-3.jpg · 1200 × 1500 · 4:5">
+              <img src="assets/img/carousel-3.jpg" alt="Drinkware — Stainless steel" loading="lazy"
+                   onerror="this.closest('.media').classList.add('is-empty')">
+              <figcaption class="carousel__meta">
+                <span class="carousel__cat">Drinkware</span>
+                <span class="carousel__name">Stainless steel</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="carousel__item">
+            <figure class="media carousel__card" data-slot="assets/img/carousel-4.jpg · 1200 × 1500 · 4:5">
+              <img src="assets/img/carousel-4.jpg" alt="Injection — Hard goods" loading="lazy"
+                   onerror="this.closest('.media').classList.add('is-empty')">
+              <figcaption class="carousel__meta">
+                <span class="carousel__cat">Injection</span>
+                <span class="carousel__name">Hard goods</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="carousel__item">
+            <figure class="media carousel__card" data-slot="assets/img/carousel-5.jpg · 1200 × 1500 · 4:5">
+              <img src="assets/img/carousel-5.jpg" alt="Packaging — Retail-ready" loading="lazy"
+                   onerror="this.closest('.media').classList.add('is-empty')">
+              <figcaption class="carousel__meta">
+                <span class="carousel__cat">Packaging</span>
+                <span class="carousel__name">Retail-ready</span>
+              </figcaption>
+            </figure>
+          </li>
+          </ul>
+        </div>
+        <div class="carousel__nav">
+          <p class="carousel__count"><span id="carouselNow">1</span> / 5</p>
+          <div class="carousel__arrows">
+            <button class="carousel__btn" type="button" data-dir="-1" aria-label="Previous item">
+              <span aria-hidden="true">&#8592;</span>
+            </button>
+            <button class="carousel__btn" type="button" data-dir="1" aria-label="Next item">
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -334,7 +394,7 @@
 <footer class="foot">
   <div class="wrap foot__inner">
     <div>
-      <img class="foot__logo" src="assets/img/logo-light.png" width="161" height="44"
+      <img class="foot__logo" src="assets/img/logo.png" width="161" height="44"
            alt="Director's Choice Ltd">
       <p class="foot__tag">One stop solution provider — from concept to merchandise store shelf.</p>
     </div>
@@ -350,6 +410,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=2" defer></script>
 </body>
 </html>

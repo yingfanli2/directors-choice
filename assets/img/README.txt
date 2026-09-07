@@ -1,11 +1,14 @@
 IMAGE SLOTS — drop files here with these exact names and the page picks them up.
 Until a file exists, the page shows a dashed placeholder naming the slot.
 
-  hero.jpg                1500 x 2000    3:4    split-hero main image, right column
-                                                (crops to 3:2 on phones - keep the subject centred)
-  hero-detail.jpg         1000 x 1000    1:1    small square that overlaps the main hero
-                                                image's lower-left corner - a close crop
-                                                (tumbler, stitching, finish) reads best
+  carousel-1.jpg          1200 x 1500    4:5    hero carousel - Plush
+  carousel-2.jpg          1200 x 1500    4:5    hero carousel - Silicone
+  carousel-3.jpg          1200 x 1500    4:5    hero carousel - Drinkware
+  carousel-4.jpg          1200 x 1500    4:5    hero carousel - Injection
+  carousel-5.jpg          1200 x 1500    4:5    hero carousel - Packaging
+                                                (all five are portrait cards;
+                                                 the middle one is shown large,
+                                                 its neighbours recede in 3D)
   about.jpg               1200 x 1500    4:5    development / production shot
   product-plush.jpg       1200 x 1500    4:5
   product-silicone.jpg    1200 x 1500    4:5
@@ -18,8 +21,10 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
 BRAND ASSETS - already in place, generated from "DC Logo.pdf". Do not overwrite
 without regenerating both colourways together.
 
-  logo.png                 900 x 247    brand red #CB2026, for the nav
-  logo-light.png           900 x 247    paper #FAF6EC, for the dark footer
+  logo.png                 900 x 247    brand red #CB2026 — the ONLY colourway.
+                                        The mark is always the brand red, on
+                                        every background. Do not substitute a
+                                        light version for contrast reasons.
   favicon.png              512 x 512    "D" in paper on a brand-red rounded square
   apple-touch-icon.png     180 x 180    same mark, square (iOS masks its own corners)
 
