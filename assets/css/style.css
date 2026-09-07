@@ -74,6 +74,8 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .wrap{ width:100%; max-width:var(--max); margin-inline:auto; padding-inline:var(--gut); }
 
 /* ---------- type primitives ---------- */
+.hl{ color:var(--brick); font-weight:500; }
+
 .display-sm{
   font-family:var(--f-display); font-weight:400; text-wrap:balance;
   font-size:clamp(28px,3.4vw,44px); line-height:1.18; letter-spacing:-.01em;
@@ -93,6 +95,16 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 }
 .btn:hover{ background:var(--brick); transform:translateY(-2px); }
 .btn--sm{ padding:11px 22px; font-size:13px; }
+.cta__member{
+  display:inline-flex; align-items:center; justify-content:center;
+  margin-top:clamp(26px,3vw,38px);
+  padding:clamp(12px,1.4vw,17px) clamp(18px,2vw,26px);
+  background:var(--ink); border-radius:10px;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.cta__member:hover{ transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.5); }
+.cta__member img{ height:clamp(26px,2.6vw,36px); width:auto; display:block; }
+
 .btn--lg{ padding:19px 42px; font-size:15px; margin-top:clamp(40px,5vw,64px); }
 .btn.is-static{ cursor:default; }
 .btn.is-static:hover{ background:var(--brand); transform:none; }
@@ -213,6 +225,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
    card. Width is left to the image, so nothing is cropped or letterboxed. */
 .carousel__item{
   position:absolute; left:50%; top:50%;
+  width:max-content;
   height:clamp(190px,min(26vw,38vh),372px);
   transform:translate(-50%,-50%);
   transition:transform .8s var(--ease), opacity .8s var(--ease);
@@ -224,7 +237,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   background:#000;
   box-shadow:0 0 0 1px rgba(242,239,233,.2), 0 30px 70px rgba(0,0,0,.6);
 }
-.media.carousel__card img{ height:100%; width:auto; object-fit:fill; }
+.media.carousel__card img{ height:100%; width:auto; max-width:none; object-fit:contain; }
 .carousel__item.is-active .carousel__card{
   box-shadow:0 0 0 1px rgba(242,239,233,.34), 0 40px 90px rgba(0,0,0,.78);
 }
@@ -331,7 +344,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 }
 .trust__note{
   font-family:var(--f-sans); font-size:14px; color:var(--ink-3);
-  max-width:22ch; line-height:1.4;
+  line-height:1.4; margin-top:clamp(22px,2.6vw,32px);
 }
 
 /* ============================================================
@@ -565,6 +578,10 @@ a.field__v:hover{ color:var(--brick); border-color:var(--brick); }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+@media (max-width:940px){
+  .trust__list{ justify-content:center; }
+  .trust__note{ text-align:center; }
+}
 @media (max-width:1024px){
   .prods{ grid-template-columns:repeat(2,1fr); gap:clamp(26px,4vw,40px); }
   .stats__list{ grid-template-columns:repeat(2,1fr); }
@@ -588,6 +605,10 @@ a.field__v:hover{ color:var(--brick); border-color:var(--brick); }
   .stats__list{ grid-template-columns:1fr; }
   .stats__list li{ border-left:0; padding-left:0; border-bottom:1px solid var(--line); }
   .stats__list li:last-child{ border-bottom:0; }
+  .carousel__meta{
+    inset:0 0 auto 0;
+    background:linear-gradient(to bottom, rgba(8,8,7,.92), rgba(8,8,7,.6) 55%, rgba(8,8,7,0));
+  }
   .carousel__stage{ height:84vw; max-height:400px; }
   .carousel__item{ height:66vw; max-height:320px; }
   .btn{ width:100%; }
