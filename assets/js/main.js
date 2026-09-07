@@ -69,48 +69,60 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---- hero carousel ---- */
+  /* ---- hero gallery ---- */
   (function () {
     var root = document.getElementById('carousel');
     if (!root) return;
 
-    var items = Array.prototype.slice.call(root.querySelectorAll('.carousel__item'));
+    var track = root.querySelector('.carousel__track');
     var stage = root.querySelector('.carousel__stage');
-    var now = document.getElementById('carouselNow');
+    var count = document.getElementById('carouselNow');
+    var real = Array.prototype.slice.call(track.children);
+    var realN = real.length;
+    if (realN < 2) return;
+
+    // Five cards fill five visible slots, so a plain wrap would have to
+    // teleport one card across the stage. Cloning the deck once moves that
+    // wrap off-stage: the arc stays symmetrical and every move is a slide.
+    real.forEach(function (li) {
+      var clone = li.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+    var items = Array.prototype.slice.call(track.children);
     var n = items.length;
-    if (n < 2) return;
+
+    // the arc, indexed by distance from the middle
+    var SPREAD = [0, 108, 205, 290];   // % of card width
+    var SCALE  = [1, 0.87, 0.75, 0.66];
+    var ROTATE = [0, 16, 26, 30];      // deg
+    var LIFT   = [0, 5, 14, 18];       // % of card height, downward
+    var FADE   = [1, 0.92, 0.8, 0];
 
     var active = 0;
     var timer = null;
-    var HOLD = 4600;
-
-    // how far each neighbour sits from the middle, and how much it recedes
-    var SPREAD = [0, 50, 88];
-    var SCALE  = [1, 0.82, 0.66];
-    var ROTATE = [0, 21, 28];
-    var FADE   = [1, 0.78, 0.4];
+    var HOLD = 4200;
 
     function layout() {
       items.forEach(function (el, i) {
         var off = i - active;
-        if (off > n / 2) off -= n;            // wrap to the shortest way round
+        if (off > n / 2) off -= n;          // shortest way round
         if (off < -n / 2) off += n;
-        var d = Math.min(Math.abs(off), 2);
+        var d = Math.min(Math.abs(off), 3);
         var sign = off < 0 ? -1 : 1;
-        var hidden = Math.abs(off) > 2;
 
         el.style.transform =
           'translate(-50%,-50%)' +
           ' translateX(' + (sign * SPREAD[d]) + '%)' +
+          ' translateY(' + LIFT[d] + '%)' +
           ' scale(' + SCALE[d] + ')' +
           ' rotateY(' + (-sign * ROTATE[d]) + 'deg)';
-        el.style.opacity = hidden ? 0 : FADE[d];
+        el.style.opacity = FADE[d];
         el.style.zIndex = String(20 - d);
-        el.style.pointerEvents = hidden ? 'none' : '';
+        el.style.pointerEvents = d === 3 ? 'none' : '';
         el.classList.toggle('is-active', off === 0);
-        el.setAttribute('aria-hidden', off === 0 ? 'false' : 'true');
       });
-      if (now) now.textContent = String(active + 1);
+      if (count) count.textContent = String((active % realN) + 1);
     }
 
     function go(step) {
@@ -134,12 +146,13 @@
       });
     });
 
-    // click a neighbour to bring it forward
     items.forEach(function (el, i) {
       el.addEventListener('click', function () {
         if (i === active) return;
-        active = i;
-        layout();
+        var off = i - active;
+        if (off > n / 2) off -= n;
+        if (off < -n / 2) off += n;
+        go(off);
         play();
       });
     });
@@ -157,20 +170,19 @@
       if (document.hidden) stop(); else play();
     });
 
-    // drag / swipe
-    var down = null;
+    var from = null;
     stage.addEventListener('pointerdown', function (e) {
-      down = e.clientX; stop();
+      from = e.clientX; stop();
       stage.setPointerCapture(e.pointerId);
     });
     stage.addEventListener('pointerup', function (e) {
-      if (down === null) return;
-      var dx = e.clientX - down;
-      down = null;
-      if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+      if (from === null) return;
+      var dx = e.clientX - from;
+      from = null;
+      if (Math.abs(dx) > 45) go(dx < 0 ? 1 : -1);
       play();
     });
-    stage.addEventListener('pointercancel', function () { down = null; play(); });
+    stage.addEventListener('pointercancel', function () { from = null; play(); });
 
     layout();
     play();

@@ -1,14 +1,19 @@
 IMAGE SLOTS — drop files here with these exact names and the page picks them up.
 Until a file exists, the page shows a dashed placeholder naming the slot.
 
-  carousel-1.jpg          1200 x 1500    4:5    hero carousel - Plush
-  carousel-2.jpg          1200 x 1500    4:5    hero carousel - Silicone
-  carousel-3.jpg          1200 x 1500    4:5    hero carousel - Drinkware
-  carousel-4.jpg          1200 x 1500    4:5    hero carousel - Injection
-  carousel-5.jpg          1200 x 1500    4:5    hero carousel - Packaging
-                                                (all five are portrait cards;
-                                                 the middle one is shown large,
-                                                 its neighbours recede in 3D)
+  carousel-1.jpg          1200 x 1600    3:4    hero gallery - Plush
+  carousel-2.jpg          1200 x 1600    3:4    hero gallery - Silicone
+  carousel-3.jpg          1200 x 1600    3:4    hero gallery - Drinkware
+  carousel-4.jpg          1200 x 1600    3:4    hero gallery - Injection
+  carousel-5.jpg          1200 x 1600    3:4    hero gallery - Packaging
+
+                                                These five ARE the hero - the
+                                                whole first screen is the arc,
+                                                so they carry the first
+                                                impression. Portrait crops,
+                                                subject centred; a caption sits
+                                                over the bottom ~90px of each,
+                                                so keep that area quiet.
   about.jpg               1200 x 1500    4:5    development / production shot
   product-plush.jpg       1200 x 1500    4:5
   product-silicone.jpg    1200 x 1500    4:5

@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -64,94 +64,77 @@
 
 <!-- ───────────────────────────  HERO  ─────────────────────────── -->
 <section class="hero">
-  <div class="wrap hero__grid">
-    <div class="hero__text">
-      <p class="eyebrow reveal">One stop solution provider</p>
+  <!-- The headline is carried here for search engines and screen readers; the
+       hero itself is a full-bleed gallery, so nothing is shown on screen. -->
+  <h1 class="vh">Director's Choice Ltd — from concept to merchandise store shelf.
+    Plush, silicone, drinkware and injection for the world's leading theme parks.</h1>
 
-      <h1 class="hero__title reveal">
-        From concept to merchandise <em>store shelf.</em>
-      </h1>
-
-      <p class="lede reveal">
-        Direct vendor and trusted OEM solution partner to the world's leading
-        theme parks. Plush, silicone, drinkware and injection — developed,
-        produced and delivered under one roof.
-      </p>
-
-      <div class="hero__actions reveal">
-        <a class="btn" href="#products">See the product lines <span class="btn__arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn--ghost" href="#contact">Start a programme</a>
-      </div>
+  <div class="carousel reveal" id="carousel" role="group"
+       aria-roledescription="carousel" aria-label="What we make" tabindex="0">
+    <div class="carousel__stage">
+      <ul class="carousel__track">
+        <li class="carousel__item">
+          <figure class="media carousel__card" data-slot="assets/img/carousel-1.jpg · 1200 × 1600 · 3:4">
+            <img src="assets/img/carousel-1.jpg" alt="Plush — Character-accurate" loading="lazy"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Plush</span>
+              <span class="carousel__name">Character-accurate</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card" data-slot="assets/img/carousel-2.jpg · 1200 × 1600 · 3:4">
+            <img src="assets/img/carousel-2.jpg" alt="Silicone — Everyday carry" loading="lazy"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Silicone</span>
+              <span class="carousel__name">Everyday carry</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card" data-slot="assets/img/carousel-3.jpg · 1200 × 1600 · 3:4">
+            <img src="assets/img/carousel-3.jpg" alt="Drinkware — Stainless steel" loading="lazy"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Drinkware</span>
+              <span class="carousel__name">Stainless steel</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card" data-slot="assets/img/carousel-4.jpg · 1200 × 1600 · 3:4">
+            <img src="assets/img/carousel-4.jpg" alt="Injection — Hard goods" loading="lazy"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Injection</span>
+              <span class="carousel__name">Hard goods</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card" data-slot="assets/img/carousel-5.jpg · 1200 × 1600 · 3:4">
+            <img src="assets/img/carousel-5.jpg" alt="Packaging — Retail-ready" loading="lazy"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Packaging</span>
+              <span class="carousel__name">Retail-ready</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
     </div>
 
-    <div class="hero__media">
-      <div class="carousel reveal" id="carousel" role="group"
-           aria-roledescription="carousel" aria-label="What we make">
-        <div class="carousel__stage">
-          <ul class="carousel__track">
-          <li class="carousel__item">
-            <figure class="media carousel__card" data-slot="assets/img/carousel-1.jpg · 1200 × 1500 · 4:5">
-              <img src="assets/img/carousel-1.jpg" alt="Plush — Character-accurate" loading="lazy"
-                   onerror="this.closest('.media').classList.add('is-empty')">
-              <figcaption class="carousel__meta">
-                <span class="carousel__cat">Plush</span>
-                <span class="carousel__name">Character-accurate</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="carousel__item">
-            <figure class="media carousel__card" data-slot="assets/img/carousel-2.jpg · 1200 × 1500 · 4:5">
-              <img src="assets/img/carousel-2.jpg" alt="Silicone — Everyday carry" loading="lazy"
-                   onerror="this.closest('.media').classList.add('is-empty')">
-              <figcaption class="carousel__meta">
-                <span class="carousel__cat">Silicone</span>
-                <span class="carousel__name">Everyday carry</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="carousel__item">
-            <figure class="media carousel__card" data-slot="assets/img/carousel-3.jpg · 1200 × 1500 · 4:5">
-              <img src="assets/img/carousel-3.jpg" alt="Drinkware — Stainless steel" loading="lazy"
-                   onerror="this.closest('.media').classList.add('is-empty')">
-              <figcaption class="carousel__meta">
-                <span class="carousel__cat">Drinkware</span>
-                <span class="carousel__name">Stainless steel</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="carousel__item">
-            <figure class="media carousel__card" data-slot="assets/img/carousel-4.jpg · 1200 × 1500 · 4:5">
-              <img src="assets/img/carousel-4.jpg" alt="Injection — Hard goods" loading="lazy"
-                   onerror="this.closest('.media').classList.add('is-empty')">
-              <figcaption class="carousel__meta">
-                <span class="carousel__cat">Injection</span>
-                <span class="carousel__name">Hard goods</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="carousel__item">
-            <figure class="media carousel__card" data-slot="assets/img/carousel-5.jpg · 1200 × 1500 · 4:5">
-              <img src="assets/img/carousel-5.jpg" alt="Packaging — Retail-ready" loading="lazy"
-                   onerror="this.closest('.media').classList.add('is-empty')">
-              <figcaption class="carousel__meta">
-                <span class="carousel__cat">Packaging</span>
-                <span class="carousel__name">Retail-ready</span>
-              </figcaption>
-            </figure>
-          </li>
-          </ul>
-        </div>
-        <div class="carousel__nav">
-          <p class="carousel__count"><span id="carouselNow">1</span> / 5</p>
-          <div class="carousel__arrows">
-            <button class="carousel__btn" type="button" data-dir="-1" aria-label="Previous item">
-              <span aria-hidden="true">&#8592;</span>
-            </button>
-            <button class="carousel__btn" type="button" data-dir="1" aria-label="Next item">
-              <span aria-hidden="true">&#8594;</span>
-            </button>
-          </div>
-        </div>
+    <div class="wrap carousel__nav">
+      <p class="carousel__count"><span id="carouselNow">1</span> / 5</p>
+      <div class="carousel__arrows">
+        <button class="carousel__btn" type="button" data-dir="-1" aria-label="Previous item">
+          <span aria-hidden="true">&#8592;</span>
+        </button>
+        <button class="carousel__btn" type="button" data-dir="1" aria-label="Next item">
+          <span aria-hidden="true">&#8594;</span>
+        </button>
       </div>
     </div>
   </div>
@@ -410,6 +393,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2" defer></script>
+<script src="assets/js/main.js?v=5" defer></script>
 </body>
 </html>
