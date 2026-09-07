@@ -10,9 +10,14 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
              photo background are the same colour, so nothing is cropped and
              nothing shows a seam. Keep that convention for replacements.
 
-             14-personalisation-kiosk.jpg and 15-in-park-fixture.jpg are retail
-             interiors, not black-ground product shots, so they carry
-             .carousel__card--fill and are cropped to fill instead.
+             Cards share a HEIGHT, not a width: a landscape photograph is
+             simply a wider card. Any aspect ratio is fine.
+
+             14-personalisation-kiosk.jpg and 15-in-park-fixture.jpg came from
+             HEIC originals whose EXIF said portrait while the stored buffer
+             was landscape. `sips -s format jpeg` does NOT apply that rotation,
+             so they had to be turned a quarter turn clockwise afterwards. If
+             you ever add another iPhone photo this way, check it stands up.
 
   about.jpg               1200 x 1500    4:5    development / production shot
   product-plush.jpg       1200 x 1500    4:5

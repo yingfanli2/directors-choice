@@ -202,30 +202,31 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .carousel:focus-visible{ outline-offset:8px; }
 .carousel__stage{
   position:relative;
-  height:clamp(300px,30vw,420px);
+  height:clamp(270px,27vw,392px);
   perspective:1900px;
   overflow:hidden;
   cursor:grab;
 }
 .carousel__stage:active{ cursor:grabbing; }
 .carousel__track{ position:absolute; inset:0; transform-style:preserve-3d; }
+/* every card is the same HEIGHT; a landscape photograph is simply a wider
+   card. Width is left to the image, so nothing is cropped or letterboxed. */
 .carousel__item{
   position:absolute; left:50%; top:50%;
-  width:clamp(180px,20vw,290px);
+  height:clamp(210px,22vw,310px);
   transform:translate(-50%,-50%);
   transition:transform .8s var(--ease), opacity .8s var(--ease);
   will-change:transform, opacity;
 }
 .carousel__card{
+  height:100%; width:auto;
   border-radius:16px;
   background:#000;
-  box-shadow:0 0 0 1px rgba(242,239,233,.09), 0 30px 70px rgba(0,0,0,.6);
+  box-shadow:0 0 0 1px rgba(242,239,233,.2), 0 30px 70px rgba(0,0,0,.6);
 }
-/* every card is the same width and keeps its photograph's own height —
-   nothing is cropped, and a landscape shot is simply a shorter card */
-.media.carousel__card img{ width:100%; height:auto; object-fit:fill; }
+.media.carousel__card img{ height:100%; width:auto; object-fit:fill; }
 .carousel__item.is-active .carousel__card{
-  box-shadow:0 0 0 1px rgba(242,239,233,.16), 0 40px 90px rgba(0,0,0,.78);
+  box-shadow:0 0 0 1px rgba(242,239,233,.34), 0 40px 90px rgba(0,0,0,.78);
 }
 .carousel__meta{
   position:absolute; inset:auto 0 0 0;
@@ -504,8 +505,8 @@ a.field__v:hover{ color:var(--brick); border-color:var(--brick); }
   html{ scroll-padding-top:74px; }
   .nav__links, .nav__cta{ display:none; }
   .burger{ display:block; }
-  .carousel__stage{ height:clamp(300px,46vw,400px); }
-  .carousel__item{ width:clamp(200px,32vw,270px); }
+  .carousel__stage{ height:clamp(280px,42vw,370px); }
+  .carousel__item{ height:clamp(210px,32vw,290px); }
   .about{ grid-template-columns:1fr; }
   .about__lead, .cap__sticky{ position:static; }
   .cap{ grid-template-columns:1fr; }
@@ -519,8 +520,8 @@ a.field__v:hover{ color:var(--brick); border-color:var(--brick); }
   .stats__list li:last-child{ border-bottom:0; }
   .cta__grid{ grid-template-columns:1fr; }
   .cta__grid .field{ padding-left:0 !important; }
-  .carousel__stage{ height:86vw; max-height:420px; }
-  .carousel__item{ width:62vw; }
+  .carousel__stage{ height:78vw; max-height:380px; }
+  .carousel__item{ height:62vw; max-height:300px; }
   .btn{ width:100%; }
 }
 

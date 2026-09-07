@@ -92,11 +92,17 @@
     var items = Array.prototype.slice.call(track.children);
     var n = items.length;
 
-    // the arc, indexed by distance from the middle
-    var SPREAD = [0, 108, 205, 290];   // % of card width
+    // The arc, indexed by distance from the middle. Cards no longer share a
+    // width, so the step is measured against the stage rather than against
+    // each card, otherwise a wide card would push its neighbours further out
+    // than a narrow one does.
+    var SPREAD_WIDE   = [0, 0.265, 0.475, 0.62];   // fraction of the stage width
+    var SPREAD_NARROW = [0, 0.40, 0.72, 0.92];     // a phone needs a bigger step
+                                                   // or the neighbours hide
+                                                   // behind the middle card
     var SCALE  = [1, 0.87, 0.75, 0.66];
-    var ROTATE = [0, 16, 26, 30];      // deg
-    var LIFT   = [0, 5, 14, 18];       // % of card height, downward
+    var ROTATE = [0, 16, 26, 30];          // deg
+    var LIFT   = [0, 5, 14, 18];           // % of the card's own height, down
     var FADE   = [1, 0.92, 0.8, 0];
 
     var active = 0;
@@ -110,10 +116,11 @@
         if (off < -n / 2) off += n;
         var d = Math.min(Math.abs(off), 3);
         var sign = off < 0 ? -1 : 1;
+        var spread = stage.clientWidth < 640 ? SPREAD_NARROW : SPREAD_WIDE;
 
         el.style.transform =
           'translate(-50%,-50%)' +
-          ' translateX(' + (sign * SPREAD[d]) + '%)' +
+          ' translateX(' + Math.round(sign * spread[d] * stage.clientWidth) + 'px)' +
           ' translateY(' + LIFT[d] + '%)' +
           ' scale(' + SCALE[d] + ')' +
           ' rotateY(' + (-sign * ROTATE[d]) + 'deg)';
@@ -182,6 +189,12 @@
       play();
     });
     stage.addEventListener('pointercancel', function () { from = null; play(); });
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(layout, 120);
+    });
 
     layout();
     play();
