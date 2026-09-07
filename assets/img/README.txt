@@ -1,19 +1,19 @@
 IMAGE SLOTS — drop files here with these exact names and the page picks them up.
 Until a file exists, the page shows a dashed placeholder naming the slot.
 
-  carousel-1.jpg          1200 x 1600    3:4    hero gallery - Plush
-  carousel-2.jpg          1200 x 1600    3:4    hero gallery - Silicone
-  carousel-3.jpg          1200 x 1600    3:4    hero gallery - Drinkware
-  carousel-4.jpg          1200 x 1600    3:4    hero gallery - Injection
-  carousel-5.jpg          1200 x 1600    3:4    hero gallery - Packaging
+  gallery/  — IN PLACE. Fifteen product photographs, resized to 900px on the
+             long side. These ARE the hero: the whole first screen is the arc,
+             so they carry the first impression.
 
-                                                These five ARE the hero - the
-                                                whole first screen is the arc,
-                                                so they carry the first
-                                                impression. Portrait crops,
-                                                subject centred; a caption sits
-                                                over the bottom ~90px of each,
-                                                so keep that area quiet.
+             Thirteen are shot on pure black, which is why the cards use
+             object-fit:contain over a black ground — the letterbox and the
+             photo background are the same colour, so nothing is cropped and
+             nothing shows a seam. Keep that convention for replacements.
+
+             14-personalisation-kiosk.jpg and 15-in-park-fixture.jpg are retail
+             interiors, not black-ground product shots, so they carry
+             .carousel__card--fill and are cropped to fill instead.
+
   about.jpg               1200 x 1500    4:5    development / production shot
   product-plush.jpg       1200 x 1500    4:5
   product-silicone.jpg    1200 x 1500    4:5

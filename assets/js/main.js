@@ -81,14 +81,16 @@
     var realN = real.length;
     if (realN < 2) return;
 
-    // Five cards fill five visible slots, so a plain wrap would have to
-    // teleport one card across the stage. Cloning the deck once moves that
-    // wrap off-stage: the arc stays symmetrical and every move is a slide.
-    real.forEach(function (li) {
-      var clone = li.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.appendChild(clone);
-    });
+    // Five visible slots plus a hidden slot each side needs seven cards for
+    // the wrap to happen off-stage. With fewer, clone the deck once so the
+    // arc still never has to teleport a card across the middle.
+    if (real.length < 7) {
+      real.forEach(function (li) {
+        var clone = li.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+    }
     var items = Array.prototype.slice.call(track.children);
     var n = items.length;
 

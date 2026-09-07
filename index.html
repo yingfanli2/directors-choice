@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=5">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -64,62 +64,187 @@
 
 <!-- ───────────────────────────  HERO  ─────────────────────────── -->
 <section class="hero">
-  <!-- The headline is carried here for search engines and screen readers; the
-       hero itself is a full-bleed gallery, so nothing is shown on screen. -->
-  <h1 class="vh">Director's Choice Ltd — from concept to merchandise store shelf.
-    Plush, silicone, drinkware and injection for the world's leading theme parks.</h1>
-
   <div class="carousel reveal" id="carousel" role="group"
        aria-roledescription="carousel" aria-label="What we make" tabindex="0">
     <div class="carousel__stage">
       <ul class="carousel__track">
         <li class="carousel__item">
-          <figure class="media carousel__card" data-slot="assets/img/carousel-1.jpg · 1200 × 1600 · 3:4">
-            <img src="assets/img/carousel-1.jpg" alt="Plush — Character-accurate" loading="lazy"
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/01-castle-detail.jpg">
+            <img src="assets/img/gallery/01-castle-detail.jpg" alt="Castle centrepiece — collectibles produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Collectibles</span>
+              <span class="carousel__name">Castle centrepiece</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/02-character-plush.jpg">
+            <img src="assets/img/gallery/02-character-plush.jpg" alt="Character plush — plush produced by Director's Choice"
+                 loading="lazy" decoding="async"
                  onerror="this.closest('.media').classList.add('is-empty')">
             <figcaption class="carousel__meta">
               <span class="carousel__cat">Plush</span>
-              <span class="carousel__name">Character-accurate</span>
+              <span class="carousel__name">Character plush</span>
             </figcaption>
           </figure>
         </li>
         <li class="carousel__item">
-          <figure class="media carousel__card" data-slot="assets/img/carousel-2.jpg · 1200 × 1600 · 3:4">
-            <img src="assets/img/carousel-2.jpg" alt="Silicone — Everyday carry" loading="lazy"
-                 onerror="this.closest('.media').classList.add('is-empty')">
-            <figcaption class="carousel__meta">
-              <span class="carousel__cat">Silicone</span>
-              <span class="carousel__name">Everyday carry</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="carousel__item">
-          <figure class="media carousel__card" data-slot="assets/img/carousel-3.jpg · 1200 × 1600 · 3:4">
-            <img src="assets/img/carousel-3.jpg" alt="Drinkware — Stainless steel" loading="lazy"
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/03-bottles-tumblers.jpg">
+            <img src="assets/img/gallery/03-bottles-tumblers.jpg" alt="Bottles and tumblers — drinkware produced by Director's Choice"
+                 loading="lazy" decoding="async"
                  onerror="this.closest('.media').classList.add('is-empty')">
             <figcaption class="carousel__meta">
               <span class="carousel__cat">Drinkware</span>
-              <span class="carousel__name">Stainless steel</span>
+              <span class="carousel__name">Bottles and tumblers</span>
             </figcaption>
           </figure>
         </li>
         <li class="carousel__item">
-          <figure class="media carousel__card" data-slot="assets/img/carousel-4.jpg · 1200 × 1600 · 3:4">
-            <img src="assets/img/carousel-4.jpg" alt="Injection — Hard goods" loading="lazy"
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/04-faceted-tumbler.jpg">
+            <img src="assets/img/gallery/04-faceted-tumbler.jpg" alt="Faceted tumbler — drinkware produced by Director's Choice"
+                 loading="lazy" decoding="async"
                  onerror="this.closest('.media').classList.add('is-empty')">
             <figcaption class="carousel__meta">
-              <span class="carousel__cat">Injection</span>
-              <span class="carousel__name">Hard goods</span>
+              <span class="carousel__cat">Drinkware</span>
+              <span class="carousel__name">Faceted tumbler</span>
             </figcaption>
           </figure>
         </li>
         <li class="carousel__item">
-          <figure class="media carousel__card" data-slot="assets/img/carousel-5.jpg · 1200 × 1600 · 3:4">
-            <img src="assets/img/carousel-5.jpg" alt="Packaging — Retail-ready" loading="lazy"
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/05-clip-companions.jpg">
+            <img src="assets/img/gallery/05-clip-companions.jpg" alt="Clip-on companions — plush produced by Director's Choice"
+                 loading="lazy" decoding="async"
                  onerror="this.closest('.media').classList.add('is-empty')">
             <figcaption class="carousel__meta">
-              <span class="carousel__cat">Packaging</span>
-              <span class="carousel__name">Retail-ready</span>
+              <span class="carousel__cat">Plush</span>
+              <span class="carousel__name">Clip-on companions</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/06-seasonal-plush.jpg">
+            <img src="assets/img/gallery/06-seasonal-plush.jpg" alt="Seasonal dress-up — plush produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Plush</span>
+              <span class="carousel__name">Seasonal dress-up</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/07-duck-family.jpg">
+            <img src="assets/img/gallery/07-duck-family.jpg" alt="Character family — plush produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Plush</span>
+              <span class="carousel__name">Character family</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/08-miniature-figures.jpg">
+            <img src="assets/img/gallery/08-miniature-figures.jpg" alt="Miniature series — figures produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Figures</span>
+              <span class="carousel__name">Miniature series</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/09-villain-series.jpg">
+            <img src="assets/img/gallery/09-villain-series.jpg" alt="Villain series — figures produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Figures</span>
+              <span class="carousel__name">Villain series</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/10-park-favourites.jpg">
+            <img src="assets/img/gallery/10-park-favourites.jpg" alt="Park favourites — plush produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Plush</span>
+              <span class="carousel__name">Park favourites</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/11-castle-scenes.jpg">
+            <img src="assets/img/gallery/11-castle-scenes.jpg" alt="Castle scenes — collectibles produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Collectibles</span>
+              <span class="carousel__name">Castle scenes</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/12-character-tumbler.jpg">
+            <img src="assets/img/gallery/12-character-tumbler.jpg" alt="Character tumbler — drinkware produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Drinkware</span>
+              <span class="carousel__name">Character tumbler</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card"
+                  data-slot="assets/img/gallery/13-tumbler-detail.jpg">
+            <img src="assets/img/gallery/13-tumbler-detail.jpg" alt="Tumbler detail — drinkware produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Drinkware</span>
+              <span class="carousel__name">Tumbler detail</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card carousel__card--fill"
+                  data-slot="assets/img/gallery/14-personalisation-kiosk.jpg">
+            <img src="assets/img/gallery/14-personalisation-kiosk.jpg" alt="Personalisation kiosk — retail produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Retail</span>
+              <span class="carousel__name">Personalisation kiosk</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__item">
+          <figure class="media carousel__card carousel__card--fill"
+                  data-slot="assets/img/gallery/15-in-park-fixture.jpg">
+            <img src="assets/img/gallery/15-in-park-fixture.jpg" alt="In-park fixture — retail produced by Director's Choice"
+                 loading="lazy" decoding="async"
+                 onerror="this.closest('.media').classList.add('is-empty')">
+            <figcaption class="carousel__meta">
+              <span class="carousel__cat">Retail</span>
+              <span class="carousel__name">In-park fixture</span>
             </figcaption>
           </figure>
         </li>
@@ -127,7 +252,7 @@
     </div>
 
     <div class="wrap carousel__nav">
-      <p class="carousel__count"><span id="carouselNow">1</span> / 5</p>
+      <p class="carousel__count"><span id="carouselNow">1</span> / 15</p>
       <div class="carousel__arrows">
         <button class="carousel__btn" type="button" data-dir="-1" aria-label="Previous item">
           <span aria-hidden="true">&#8592;</span>
@@ -137,6 +262,13 @@
         </button>
       </div>
     </div>
+  </div>
+
+  <div class="wrap hero__say reveal">
+    <h1 class="hero__line">Director's Choice Ltd — one stop solution provider<br>
+      From concept to merchandise store shelf</h1>
+    <p class="hero__sub">Direct vendor and trusted OEM solution partner to the world's
+      leading theme parks since 2011.</p>
   </div>
 </section>
 
@@ -393,6 +525,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=5" defer></script>
+<script src="assets/js/main.js?v=9" defer></script>
 </body>
 </html>
