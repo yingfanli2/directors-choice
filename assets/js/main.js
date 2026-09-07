@@ -92,35 +92,58 @@
     var items = Array.prototype.slice.call(track.children);
     var n = items.length;
 
-    // The arc, indexed by distance from the middle. Cards no longer share a
-    // width, so the step is measured against the stage rather than against
-    // each card, otherwise a wide card would push its neighbours further out
-    // than a narrow one does.
-    var SPREAD_WIDE   = [0, 0.265, 0.475, 0.62];   // fraction of the stage width
-    var SPREAD_NARROW = [0, 0.40, 0.72, 0.92];     // a phone needs a bigger step
-                                                   // or the neighbours hide
-                                                   // behind the middle card
+    // The arc, indexed by distance from the middle.
     var SCALE  = [1, 0.87, 0.75, 0.66];
-    var ROTATE = [0, 16, 26, 30];          // deg
-    var LIFT   = [0, 5, 14, 18];           // % of the card's own height, down
+    var ROTATE = [0, 16, 26, 30];      // deg
+    var LIFT   = [0, 5, 14, 18];       // % of the card's own height, down
     var FADE   = [1, 0.92, 0.8, 0];
 
     var active = 0;
     var timer = null;
     var HOLD = 4200;
 
+    function at(off) {
+      return ((active + off) % n + n) % n;
+    }
+
+    function relative(i) {
+      var off = i - active;
+      if (off > n / 2) off -= n;        // shortest way round
+      if (off < -n / 2) off += n;
+      return off;
+    }
+
+    // Cards share a height but not a width, so even centre-to-centre steps
+    // would leave two wide cards touching and two narrow ones far apart.
+    // Walk outwards from the middle instead, adding half of each neighbour
+    // plus one constant gap, so every seam is the same width.
+    function offsets() {
+      var stageW = stage.clientWidth;
+      var gap = stageW * (stageW < 640 ? 0.055 : 0.032);
+      var xs = { 0: 0 };
+      [-1, 1].forEach(function (dir) {
+        var x = 0;
+        for (var k = 1; k <= 3; k++) {
+          var prev = items[at(dir * (k - 1))].offsetWidth * SCALE[k - 1];
+          var cur = items[at(dir * k)].offsetWidth * SCALE[Math.min(k, 3)];
+          x += prev / 2 + gap + cur / 2;
+          xs[dir * k] = dir * x;
+        }
+      });
+      return xs;
+    }
+
     function layout() {
+      var xs = offsets();
       items.forEach(function (el, i) {
-        var off = i - active;
-        if (off > n / 2) off -= n;          // shortest way round
-        if (off < -n / 2) off += n;
+        var off = relative(i);
         var d = Math.min(Math.abs(off), 3);
         var sign = off < 0 ? -1 : 1;
-        var spread = stage.clientWidth < 640 ? SPREAD_NARROW : SPREAD_WIDE;
+        var x = xs[off] !== undefined ? xs[off] : xs[sign * 3];
 
         el.style.transform =
           'translate(-50%,-50%)' +
-          ' translateX(' + Math.round(sign * spread[d] * stage.clientWidth) + 'px)' +
+          ' translateX(' + Math.round(x) + 'px)' +
           ' translateY(' + LIFT[d] + '%)' +
           ' scale(' + SCALE[d] + ')' +
           ' rotateY(' + (-sign * ROTATE[d]) + 'deg)';
@@ -155,10 +178,7 @@
     items.forEach(function (el, i) {
       el.addEventListener('click', function () {
         if (i === active) return;
-        var off = i - active;
-        if (off > n / 2) off -= n;
-        if (off < -n / 2) off += n;
-        go(off);
+        go(relative(i));
         play();
       });
     });

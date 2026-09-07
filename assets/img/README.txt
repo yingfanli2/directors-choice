@@ -13,6 +13,11 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
              Cards share a HEIGHT, not a width: a landscape photograph is
              simply a wider card. Any aspect ratio is fine.
 
+             Each card is captioned with one of the client's four product
+             lines and nothing else: Plush toys / Silicone products /
+             Stainless steel drinkware / Plastic injection. The wording lives
+             in index.html on each card.
+
              14-personalisation-kiosk.jpg and 15-in-park-fixture.jpg came from
              HEIC originals whose EXIF said portrait while the stored buffer
              was landscape. `sips -s format jpeg` does NOT apply that rotation,
@@ -28,7 +33,10 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
   og.jpg                  1200 x  630    1.91:1 social share preview
 
 
-  clients/  — EMPTY, and the page works without it. The trust strip shows each
+  clients/  — IN PLACE (disney, universal-studios, seaworld,
+             kennedy-space-center). Supplied by the client and knocked out to a
+             single light tone so the four marks read as one row rather than
+             four competing brand palettes. The trust strip shows each
              client's wordmark as type until a logo file appears, then swaps to
              the image automatically. Expected filenames:
 
