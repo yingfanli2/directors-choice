@@ -225,19 +225,20 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
    card. Width is left to the image, so nothing is cropped or letterboxed. */
 .carousel__item{
   position:absolute; left:50%; top:50%;
-  width:max-content;
   height:clamp(190px,min(26vw,38vh),372px);
+  aspect-ratio:var(--ar,3/4);
+  width:auto;
   transform:translate(-50%,-50%);
   transition:transform .8s var(--ease), opacity .8s var(--ease);
   will-change:transform, opacity;
 }
 .carousel__card{
-  height:100%; width:auto;
+  height:100%; width:100%;
   border-radius:16px;
   background:#000;
   box-shadow:0 0 0 1px rgba(242,239,233,.2), 0 30px 70px rgba(0,0,0,.6);
 }
-.media.carousel__card img{ height:100%; width:auto; max-width:none; object-fit:contain; }
+.media.carousel__card img{ width:100%; height:100%; max-width:none; object-fit:cover; }
 .carousel__item.is-active .carousel__card{
   box-shadow:0 0 0 1px rgba(242,239,233,.34), 0 40px 90px rgba(0,0,0,.78);
 }

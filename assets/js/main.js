@@ -79,6 +79,15 @@
     var real = Array.prototype.slice.call(track.children);
     if (real.length < 2) return;
 
+    // Give each card the ratio of its own photograph. The width/height
+    // attributes are on the markup, so this resolves before the file loads
+    // and the arc never reflows.
+    real.forEach(function (li) {
+      var im = li.querySelector('img');
+      var w = im.getAttribute('width'), h = im.getAttribute('height');
+      if (w && h) li.style.setProperty('--ar', w + ' / ' + h);
+    });
+
     // Five visible slots plus a hidden slot each side needs seven cards for
     // the wrap to happen off-stage. With fewer, clone the deck once so the
     // arc still never has to teleport a card across the middle.
