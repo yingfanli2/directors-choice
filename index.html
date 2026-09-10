@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=b185f8a4">
+<link rel="stylesheet" href="assets/css/style.css?v=70c5ee5b">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -62,34 +62,62 @@
 
 <!-- ───────────────────────────  HERO  ─────────────────────────── -->
 <section class="hero">
-  <div class="fade fade--hero reveal">
+  <div class="fade fade--hero">
       <figure class="media fade__item is-on">
-        <img src="assets/img/show/01-plush-characters-A.jpg" width="1800" height="876" alt="Plush toys — character plush"
+        <picture>
+          <source media="(max-width: 560px)"
+                  srcset="assets/img/show-portrait/01-plush-characters-A.jpg" width="1000" height="1946">
+          <img src="assets/img/show/01-plush-characters-A.jpg" width="1800" height="876" alt="Plush toys — character plush"
              fetchpriority="high" decoding="async">
+        </picture>
       </figure>
       <figure class="media fade__item">
-        <img src="assets/img/show/02-plush-characters-B.jpg" width="1800" height="876" alt="Plush toys — character families"
+        <picture>
+          <source media="(max-width: 560px)"
+                  srcset="assets/img/show-portrait/02-plush-characters-B.jpg" width="1000" height="1946">
+          <img src="assets/img/show/02-plush-characters-B.jpg" width="1800" height="876" alt="Plush toys — character families"
              loading="lazy" decoding="async">
+        </picture>
       </figure>
       <figure class="media fade__item">
-        <img src="assets/img/show/03-drinkware-A.jpg" width="1800" height="876" alt="Stainless steel drinkware — bottles and tumblers"
+        <picture>
+          <source media="(max-width: 560px)"
+                  srcset="assets/img/show-portrait/03-drinkware-A.jpg" width="1000" height="1946">
+          <img src="assets/img/show/03-drinkware-A.jpg" width="1800" height="876" alt="Stainless steel drinkware — bottles and tumblers"
              loading="lazy" decoding="async">
+        </picture>
       </figure>
       <figure class="media fade__item">
-        <img src="assets/img/show/04-drinkware-B.jpg" width="1800" height="876" alt="Stainless steel drinkware — character tumblers"
+        <picture>
+          <source media="(max-width: 560px)"
+                  srcset="assets/img/show-portrait/04-drinkware-B.jpg" width="1000" height="1946">
+          <img src="assets/img/show/04-drinkware-B.jpg" width="1800" height="876" alt="Stainless steel drinkware — character tumblers"
              loading="lazy" decoding="async">
+        </picture>
       </figure>
       <figure class="media fade__item">
-        <img src="assets/img/show/05-character-figures.jpg" width="1800" height="876" alt="Silicone products and character figures"
+        <picture>
+          <source media="(max-width: 560px)"
+                  srcset="assets/img/show-portrait/05-character-figures.jpg" width="1000" height="1946">
+          <img src="assets/img/show/05-character-figures.jpg" width="1800" height="876" alt="Silicone products and character figures"
              loading="lazy" decoding="async">
+        </picture>
       </figure>
       <figure class="media fade__item">
-        <img src="assets/img/show/06-castle-acrylic.jpg" width="1800" height="876" alt="Plastic injection — castle pieces"
+        <picture>
+          <source media="(max-width: 560px)"
+                  srcset="assets/img/show-portrait/06-castle-acrylic.jpg" width="1000" height="1946">
+          <img src="assets/img/show/06-castle-acrylic.jpg" width="1800" height="876" alt="Plastic injection — castle pieces"
              loading="lazy" decoding="async">
+        </picture>
       </figure>
       <figure class="media fade__item">
-        <img src="assets/img/show/07-store-displays.jpg" width="1800" height="876" alt="In-park retail displays"
+        <picture>
+          <source media="(max-width: 560px)"
+                  srcset="assets/img/show-portrait/07-store-displays.jpg" width="1000" height="1946">
+          <img src="assets/img/show/07-store-displays.jpg" width="1800" height="876" alt="In-park retail displays"
              loading="lazy" decoding="async">
+        </picture>
       </figure>
       <div class="fade__dots">
         <button class="fade__dot is-on" type="button"
@@ -302,12 +330,13 @@
       </div>
     </div>
 
-    <a class="cta__member reveal" href="https://iaapa.org"
+    <div class="cta__actions reveal">
+      <a class="cta__member" href="https://iaapa.org"
        target="_blank" rel="noopener noreferrer">
       <img src="assets/img/iaapa.png" width="793" height="200" alt="IAAPA">
     </a>
-
-    <a class="btn btn--lg reveal" href="mailto:Info@letszum.com?subject=Project%20brief">Send us a brief</a>
+      <a class="btn btn--lg" href="mailto:Info@letszum.com?subject=Project%20brief">Send us a brief</a>
+    </div>
   </div>
 </section>
 
