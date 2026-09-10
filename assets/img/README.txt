@@ -1,38 +1,11 @@
 IMAGE SLOTS — drop files here with these exact names and the page picks them up.
 Until a file exists, the page shows a dashed placeholder naming the slot.
 
-  gallery/  — IN PLACE. Fifteen product photographs, resized to 900px on the
-             long side. These ARE the hero: the whole first screen is the arc,
-             so they carry the first impression.
-
-             Thirteen are shot on pure black, which is why the cards use
-             object-fit:contain over a black ground — the letterbox and the
-             photo background are the same colour, so nothing is cropped and
-             nothing shows a seam. Keep that convention for replacements.
-
-             Cards share a HEIGHT, not a width: a landscape photograph is
-             simply a wider card. Any aspect ratio is fine.
-
-             Each card is captioned with one of the client's four product
-             lines and nothing else: Plush toys / Silicone products /
-             Stainless steel drinkware / Plastic injection. The wording lives
-             in index.html on each card.
-
-             14-personalisation-kiosk.jpg and 15-in-park-fixture.jpg came from
-             HEIC originals whose EXIF said portrait while the stored buffer
-             was landscape. `sips -s format jpeg` does NOT apply that rotation,
-             so they had to be turned a quarter turn clockwise afterwards. If
-             you ever add another iPhone photo this way, check it stands up.
-
-  team/     — IN PLACE. Two photographs that crossfade in the About block.
-  facility/ — IN PLACE. Two photographs that crossfade in Capabilities.
-
-  map.jpg   — IN PLACE. The world map of Director's Choice locations, in the
-              footer. It names the four cities itself, so the type list beside
-              it only appears if the file goes missing.
-
-  og.jpg                  1200 x  630    1.91:1 social share preview
-
+  show/     — IN PLACE. Seven 3000x1600 collages, one per product family,
+              resized to 1800px wide. These run as the hero slideshow. They sit
+              on pure black, which is why the band uses object-fit:contain over
+              a black ground: nothing is cropped and the letterbox is invisible.
+              Replacements should keep the black ground and roughly 1.875:1.
 
   clients/  — IN PLACE (disney, universal-studios, seaworld,
              kennedy-space-center). Supplied by the client and knocked out to a
