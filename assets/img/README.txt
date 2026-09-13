@@ -9,10 +9,10 @@ Until a file exists, the page shows a dashed placeholder naming the slot.
               the width of the window.
 
   show-portrait/ — IN PLACE. The same eight for phones (560px and narrower).
-              1000x1946, except 02, 05a and 05b, which are 1200x1500 (4:5) to
-              match the phone band so their products show larger. Keep the black
-              ground, and keep products clear of the top ~13% (logo and menu
-              button) and the bottom ~7% (slide dots).
+              1200x1500 (4:5) to match the phone band so the products show
+              large; 06 and 07 stay 1000x1946 because their content fills the
+              tall frame. Keep the black ground, and keep products clear of the
+              top ~13% (logo and menu button) and the bottom ~7% (slide dots).
 
   clients/  — IN PLACE (disney, universal-studios, seaworld,
              kennedy-space-center). Supplied by the client and knocked out to a
