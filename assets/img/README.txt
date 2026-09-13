@@ -1,11 +1,18 @@
 IMAGE SLOTS — drop files here with these exact names and the page picks them up.
 Until a file exists, the page shows a dashed placeholder naming the slot.
 
-  show/     — IN PLACE. Seven 3000x1600 collages, one per product family,
-              resized to 1800px wide. These run as the hero slideshow. They sit
-              on pure black, which is why the band uses object-fit:contain over
-              a black ground: nothing is cropped and the letterbox is invisible.
-              Replacements should keep the black ground and roughly 1.875:1.
+  show/     — IN PLACE. Eight collages, one per product family, 1800px wide:
+              the hero slideshow on screens wider than 560px. They sit on pure
+              black, which is why the band uses object-fit:contain over a black
+              ground: nothing is cropped and the letterbox is invisible. Most
+              are 2.05:1; 01 is cropped to 2.9:1 so its long single row fills
+              the width of the window.
+
+  show-portrait/ — IN PLACE. The same eight for phones (560px and narrower).
+              1000x1946, except 02, 05a and 05b, which are 1200x1500 (4:5) to
+              match the phone band so their products show larger. Keep the black
+              ground, and keep products clear of the top ~13% (logo and menu
+              button) and the bottom ~7% (slide dots).
 
   clients/  — IN PLACE (disney, universal-studios, seaworld,
              kennedy-space-center). Supplied by the client and knocked out to a
@@ -34,4 +41,4 @@ without regenerating both colourways together.
   favicon.png              512 x 512    "D" in paper on a brand-red rounded square
   apple-touch-icon.png     180 x 180    same mark, square (iOS masks its own corners)
 
-Use JPG for the photography (quality ~80, under ~400 KB each).
+Use JPG for the photography (quality ~80-88, under ~400 KB each).

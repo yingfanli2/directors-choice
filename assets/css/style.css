@@ -355,7 +355,11 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   transition:width .45s var(--ease), background .3s var(--ease);
 }
 .fade__dot.is-on{ width:30px; background:var(--brick); }
-.fade__dot:hover{ background:rgba(242,239,233,.75); }
+/* touch screens keep :hover on whatever was last tapped, which greyed out the
+   active pill; only real pointers get the hover, and never on the active dot */
+@media (hover:hover){
+  .fade__dot:not(.is-on):hover{ background:rgba(242,239,233,.75); }
+}
 
 /* ---------- about ---------- */
 .about{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,96px); align-items:start; }
